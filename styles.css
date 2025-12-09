@@ -1,0 +1,124 @@
+:root {
+    --primary-bg-color: rgb(245, 242, 255);
+    --primary-main-color: rgb(113, 92, 204);
+    --desktop-color: rgb(197, 186, 255);
+    --window-title-color: rgb(169, 149, 255);
+    --shadow-color: rgb(143, 126, 219);
+    --black-color: rgb(71, 71, 71);
+
+    --default-padding: 8px;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: pixelFont;
+    src: url(assets/fonts/PixelifySans-VariableFont_wght.ttf);
+}
+
+* {
+    font-family: pixelFont;
+    color: var(--primary-main-color);
+    user-select: none;
+}
+
+body {
+    background: var(--desktop-color);
+    font-family: sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+.shadow {
+    box-shadow: -4px 4px 0 var(--shadow-color);
+}
+
+.border {
+    border: 2px solid var(--primary-main-color);
+}
+
+.header {
+    display: flex;
+    width: 97%;
+    height: 32px;
+    padding: var(--default-padding);
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.75% auto;
+    background-color: var(--primary-bg-color);
+}
+
+.shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: var(--default-padding);
+}
+
+.desktop-icon {
+    position: relative;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.desktop-icon img {
+    width: 60px;
+}
+
+.window {
+    width: 600px;
+    height: 400px;
+    background: var(--primary-bg-color);
+    position: absolute;
+    display: none;
+}
+
+.title-bar {
+    background: var(--window-title-color);
+    border-bottom: 2px solid var(--primary-main-color);
+    padding: var(--default-padding);
+    cursor: grabbing;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar button {
+    background: var(--window-title-color);
+    color: var(--primary-main-color);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#viewer {
+    width: 100%;
+    height: calc(100% - 40px);
+    display: none;
+}
+
+#viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.taskbar-icons {
+    padding: var(--default-padding);
+}
+
+.inside {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary-main-color) var(--black-color) var(--black-color) var(--primary-main-color);
+}
+
+.outside {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--black-color) var(--primary-main-color) var(--primary-main-color) var(--black-color);
+}

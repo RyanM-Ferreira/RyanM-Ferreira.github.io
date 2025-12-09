@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <div class="header shadow">
+        <button class="inside taskbar-icons">Menu</button>
+        <p></p>
+        <button class="inside taskbar-icons" id="clock">--:--</button>
+    </div>
+
+    <div class="shortcuts">
+        <div class="desktop-icon" onclick="openWindow('explorer')">
+            <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" />
+            <div>Projetos</div>
+        </div>
+
+        <div class="desktop-icon" onclick="showURL('Arquivo do Balacobaco', 'https://refractionsofgreed.vercel.app')">
+            <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" />
+            <div>Web Test</div>
+        </div>
+    </div>
+
+    <!-- Explorer -->
+    <div id="explorer" class="window shadow inside" style="top:100px; left:100px;">
+        <div onmousedown="drag(event, 'explorer')" class="title-bar">
+            <span>Explorer</span>
+            <button class="outside" onclick="closeWindow('explorer')">X</button>
+        </div>
+    </div>
+
+    <!-- Viewer -->
+    <div id="window-viewer" class="window shadow inside" style="top:160px; left:160px;">
+        <div onmousedown="drag(event, 'window-viewer')" class=" title-bar">
+            <span id="viewer-title">Arquivo</span>
+            <button class="outside" onclick="closeWindow('window-viewer')">X</button>
+        </div>
+
+        <div id="viewer">
+            <iframe id="viewer-frame"></iframe>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
