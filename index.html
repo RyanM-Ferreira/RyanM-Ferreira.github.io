@@ -4,48 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio - Ryan Ferreira</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-
 <body>
-    <div class="header shadow">
-        <button class="inside taskbar-icons">Menu</button>
-        <p></p>
-        <button class="inside taskbar-icons" id="clock">--:--</button>
-    </div>
-
+    <!-- Atalhos -->
     <div class="shortcuts">
         <div class="desktop-icon" onclick="openWindow('explorer')">
-            <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" />
-            <div>Projetos</div>
+            <img src="assets/icons/folder.png" />
+            <span>My projects</span>
         </div>
 
-        <div class="desktop-icon" onclick="showURL('Arquivo do Balacobaco', 'https://refractionsofgreed.vercel.app')">
-            <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" />
-            <div>Web Test</div>
+        <div class="desktop-icon"
+            onclick="openArchive('My Final Paper - Landing Page', 'https://refractionsofgreed.vercel.app')">
+            <img src="assets/icons/folder.png" />
+            <span>Final Paper</span>
         </div>
     </div>
 
-    <!-- Explorer -->
+    <!-- Explorador de Arquivos -->
     <div id="explorer" class="window shadow inside" style="top:100px; left:100px;">
-        <div onmousedown="drag(event, 'explorer')" class="title-bar">
-            <span>Explorer</span>
-            <button class="outside" onclick="closeWindow('explorer')">X</button>
+        <div onpointerdown="drag(event, 'explorer')" class="title-bar">
+            <span>Explorer.exe</span>
+            <div class="window-buttons">
+                <button onclick="maximizeWindow('explorer')">O</button>
+                <button onclick="closeWindow('explorer')">X</button>
+            </div>
         </div>
+
+        <div class="folders">
+            <div class="folder" onclick="updateArchives('about')">
+                <img src="assets/icons/folder.png" />
+                <div>About me</div>
+            </div>
+
+            <div class="folder" onclick="updateArchives('cSharp')">
+                <img src="assets/icons/folder.png" />
+                <div>C#</div>
+            </div>
+
+            <div class="folder" onclick="updateArchives('thesis')">
+                <img src="assets/icons/folder.png" />
+                <div>Thesis</div>
+            </div>
+
+            <div class="folder" onclick="updateArchives('test')">
+                <img src="assets/icons/folder.png" />
+                <div>File test</div>
+            </div>
+        </div>
+
+        <div id="file-list" class="file-list"></div>
     </div>
 
-    <!-- Viewer -->
+    <!-- Janela do iframe -->
     <div id="window-viewer" class="window shadow inside" style="top:160px; left:160px;">
-        <div onmousedown="drag(event, 'window-viewer')" class=" title-bar">
+        <div onpointerdown="drag(event, 'window-viewer')" class="title-bar">
             <span id="viewer-title">Arquivo</span>
-            <button class="outside" onclick="closeWindow('window-viewer')">X</button>
+            <div class="window-buttons">
+                <button onclick="maximizeWindow('window-viewer')">O</button>
+                <button onclick="closeWindow('window-viewer')">X</button>
+            </div>
         </div>
 
         <div id="viewer">
             <iframe id="viewer-frame"></iframe>
         </div>
+    </div>
+
+    <!-- Barra de Tarefas -->
+    <div class="header">
+        <button class="taskbar-icons">
+            <img class="start-icon" src="assets/icons/tux.png" />Start
+        </button>
+
+        <button class="taskbar-icons" id="clock">--:--</button>
     </div>
 
     <script src="scripts.js"></script>
