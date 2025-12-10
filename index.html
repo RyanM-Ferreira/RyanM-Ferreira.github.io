@@ -18,15 +18,15 @@
 
         <div class="desktop-icon"
             onclick="openArchive('My Final Paper - Landing Page', 'https://refractionsofgreed.vercel.app')">
-            <img src="assets/icons/folder.png" />
-            <span>Final Paper</span>
+            <img src="assets/icons/gear.png" />
+            <span>Final Project</span>
         </div>
     </div>
 
     <!-- Explorador de Arquivos -->
-    <div id="explorer" class="window shadow inside" style="top:100px; left:100px;">
+    <div id="explorer" class="window shadow inside" style="top:48px; left:196px;">
         <div onpointerdown="drag(event, 'explorer')" class="title-bar">
-            <span>Explorer.exe</span>
+            <span>Explorer.exe - My Projects</span>
             <div class="window-buttons">
                 <button onclick="maximizeWindow('explorer')">O</button>
                 <button onclick="closeWindow('explorer')">X</button>
@@ -34,32 +34,34 @@
         </div>
 
         <div class="folders">
-            <div class="folder" onclick="updateArchives('about')">
+            <div class="folder" onclick="updateArchives('about', true)">
                 <img src="assets/icons/folder.png" />
                 <div>About me</div>
             </div>
 
-            <div class="folder" onclick="updateArchives('cSharp')">
+            <div class="folder" onclick="updateArchives('cSharp', true)">
                 <img src="assets/icons/folder.png" />
                 <div>C#</div>
             </div>
 
-            <div class="folder" onclick="updateArchives('thesis')">
+            <div class="folder" onclick="updateArchives('thesis', true)">
                 <img src="assets/icons/folder.png" />
                 <div>Thesis</div>
             </div>
 
-            <div class="folder" onclick="updateArchives('test')">
+            <div class="folder" onclick="updateArchives('test', true)">
                 <img src="assets/icons/folder.png" />
                 <div>File test</div>
             </div>
         </div>
 
+        <div id="breadcrumb" class="breadcrumb">
+        </div>
         <div id="file-list" class="file-list"></div>
     </div>
 
     <!-- Janela do iframe -->
-    <div id="window-viewer" class="window shadow inside" style="top:160px; left:160px;">
+    <div id="window-viewer" class="window shadow inside" style="top:96px; left:256px;">
         <div onpointerdown="drag(event, 'window-viewer')" class="title-bar">
             <span id="viewer-title">Arquivo</span>
             <div class="window-buttons">
@@ -74,12 +76,13 @@
     </div>
 
     <!-- Barra de Tarefas -->
-    <div class="header">
+    <div class="taskbar">
         <button class="taskbar-icons">
-            <img class="start-icon" src="assets/icons/tux.png" />Start
+            <img class="start-icon" src="assets/icons/tux.png" />
+            <p>Start</p>
         </button>
 
-        <button class="taskbar-icons" id="clock">--:--</button>
+        <button class="taskbar-icons" id="clock">00/00/0000 | --:--</button>
     </div>
 
     <script src="scripts.js"></script>
