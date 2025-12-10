@@ -1,0 +1,44 @@
+/* Barra de Tarefas */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--button);
+    border-top: 2px solid var(--light);
+    border-left: 2px solid var(--light);
+    border-right: 2px solid var(--dark);
+    border-bottom: 2px solid var(--dark);
+    padding: 0 6px;
+}
+
+.taskbar-icons {
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    height: 90%;
+    background: var(--button);
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+    cursor: pointer;
+}
+
+#clock {
+    border: 2px solid var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+.taskbar-icons:active {
+    border-color: var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+.start-icon {
+    width: 24px;
+}

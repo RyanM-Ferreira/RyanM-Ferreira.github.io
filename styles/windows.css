@@ -1,0 +1,60 @@
+/* Janelas */
+.window {
+    width: 60%;
+    height: 80%;
+    background: var(--bg-window);
+    position: absolute;
+    display: none;
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+}
+
+.title-bar {
+    background: var(--bg-title);
+    color: white;
+    height: 28px;
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--dark);
+}
+
+.window-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.title-bar button {
+    height: 24px;
+    padding: auto;
+    height: 20px;
+    cursor: pointer;
+    background: var(--button);
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+}
+
+.title-bar button:active {
+    border-color: var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+.window-content {
+    padding: var(--padding);
+    font-size: 14px;
+}
+
+#viewer {
+    width: 100%;
+    height: calc(100% - (var(--padding) * 3));
+}
+
+#viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

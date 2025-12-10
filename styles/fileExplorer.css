@@ -1,0 +1,95 @@
+/* Área dos arquivos */
+.file-list {
+    padding: 16px;
+    border-top: 2px solid var(--bg-title);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-item {
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--bg-window);
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+
+    color: var(--dark);
+}
+
+.file-item:active {
+    border-color: var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+.file-icon {
+    width: 24px;
+}
+
+.file-button {
+    width: 20%;
+    background: var(--button);
+    padding: 4px;
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+    cursor: pointer;
+}
+
+.file-button:hover,
+.file-item:hover {
+    border-color: var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+#breadcrumb {
+    margin: var(--padding) calc(var(--padding) * 2);
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+    cursor: pointer;
+}
+
+.breadcrumb-buttons {
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.folders {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.folder {
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.folder img {
+    width: 56px;
+    image-rendering: pixelated;
+}
+
+.folder span {
+    margin-top: 6px;
+    display: block;
+    font-size: 13px;
+    color: var(--dark);
+}
+
+.folder:hover {
+    background: var(--light);
+}

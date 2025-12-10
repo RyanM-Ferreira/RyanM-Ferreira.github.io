@@ -1,0 +1,99 @@
+#start-menu {
+    position: absolute;
+    width: 25%;
+    height: 55%;
+    left: 8px;
+    bottom: 32px;
+    display: flex;
+    flex-direction: row;
+    background: var(--button);
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+}
+
+.label {
+    width: 40px;
+    height: 100%;
+    background-color: var(--bg-title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+.label p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+#applications {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    padding: var(--padding);
+    height: 100%;
+}
+
+#applications button {
+    margin: 6px 0;
+    width: 100%;
+    background: var(--button);
+    padding: 6px;
+    text-align: left;
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+}
+
+#applications button:active {
+    border: 2px solid var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+}
+
+#applications .github {
+    margin-top: auto;
+}
+
+.sideProfile {
+    border: 1px solid red;
+    width: 50%;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-title);
+    display: flex;
+    border: 2px solid var(--dark);
+    border-right-color: var(--light);
+    border-bottom-color: var(--light);
+    color: white;
+    text-align: center;
+}
+
+.sideProfile img {
+    position: relative;
+    height: 20%;
+    margin: -32px auto;
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+}
+
+.sideProfile p {
+    margin-top: 35%;
+}
+
+.socialMedia {
+    width: 90%;
+    margin: auto auto var(--padding) auto;
+    background-color: var(--button);
+    padding: var(--padding);
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-bottom-color: var(--dark);
+}

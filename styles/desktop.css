@@ -1,0 +1,23 @@
+/* Ícones */
+.shortcuts {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.desktop-icon {
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.desktop-icon img {
+    width: 32px;
+}
+
+.desktop-icon span {
+    margin-top: 4px;
+    display: block;
+    font-size: 13px;
+}

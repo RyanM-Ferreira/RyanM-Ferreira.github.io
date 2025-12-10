@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Ryan Ferreira</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesGlobal.css">
+    <link rel="stylesheet" href="styles/windows.css">
+    <link rel="stylesheet" href="styles/fileExplorer.css">
+    <link rel="stylesheet" href="styles/startMenu.css">
+    <link rel="stylesheet" href="styles/taskbar.css">
+    <link rel="stylesheet" href="styles/desktop.css">
 </head>
 
 <body>
@@ -77,7 +82,7 @@
 
     <!-- Barra de Tarefas -->
     <div class="taskbar">
-        <button class="taskbar-icons">
+        <button onclick="startMenu()" class="taskbar-icons">
             <img class="start-icon" src="assets/icons/tux.png" />
             <p>Start</p>
         </button>
@@ -85,7 +90,27 @@
         <button class="taskbar-icons" id="clock">00/00/0000 | --:--</button>
     </div>
 
-    <script src="scripts.js"></script>
+    <div id="start-menu">
+        <div class="label">
+            <p>Ryan Ferreira</p>
+        </div>
+        <div id="applications">
+            <button>Item 1</button>
+            <button>Item 2</button>
+            <button>Item 3</button>
+            <button class="github">Github Profile</button>
+        </div>
+        <div class="sideProfile">
+            <img src="https://avatars.githubusercontent.com/u/198508806" alt="My Github Profile Picture">
+            <p>Ferreira, Ryan</p>
+            <button class="socialMedia">Social</button>
+        </div>
+    </div>
+
+    <script src="scripts/taskbar.js"></script>
+    <script src="scripts/fileExplorer.js"></script>
+    <script src="scripts/startMenu.js"></script>
+    <script src="scripts/windowManagement.js"></script>
 </body>
 
 </html>
