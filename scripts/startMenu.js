@@ -1,6 +1,76 @@
 var isStartMenuActive = true;
 
-function startMenu() {
+const category = {
+    social: [
+        { name: "Github Profile", path: "https://github.com/RyanM-Ferreira", icon: "assets/icons/gear.png" },
+        { name: "Mail me", path: "mailto:ryanmatheusferreira@outlook.com.br", icon: "assets/icons/gear.png" },
+        { name: "LinkedIn", path: "", icon: "assets/icons/gear.png" }
+    ],
+    Test: [
+        { name: "Desktop.ini", path: "../index.html", icon: "assets/icons/gear.png" },
+        {
+            name: "Submenu", icon: "assets/icons/arrow.png",
+            children: [
+                { name: "Placeholder", path: "", icon: "assets/icons/gear.png" },
+                {
+                    name: "Other Submenu", icon: "assets/icons/arrow.png",
+                    children: [
+                        { name: "Mail me", path: "mailto:ryanmatheusferreira@outlook.com.br", icon: "assets/icons/gear.png" },
+                    ],
+                }
+            ],
+        },
+    ],
+};
+
+function showCategory(categoryOrChildren, thisElement) {
+    const element = thisElement;
+    const applicationsList = document.createElement("div");
+
+    const multiplier = 1.1;
+
+    applicationsList.className = "sub-menu-div";
+    applicationsList.style.marginLeft = (element.offsetWidth / multiplier) + "px";
+    applicationsList.style.marginTop = -(element.offsetHeight / multiplier) + "px";
+
+    menuItems = Array.isArray(categoryOrChildren) ? categoryOrChildren : category[categoryOrChildren];
+
+    for (const menuCategory of menuItems) {
+        const itemButton = document.createElement("div");
+        const text = document.createElement("span");
+        const icon = document.createElement("img");
+
+        itemButton.className = "sub-menu-button";
+        icon.className = "category-icon";
+        icon.src = menuCategory.icon;
+        text.textContent = menuCategory.name;
+
+        itemButton.appendChild(text);
+        itemButton.appendChild(icon);
+
+        applicationsList.appendChild(itemButton);
+
+        itemButton.onmouseenter = () => {
+            if (menuCategory.children) {
+                showCategory(menuCategory.children, itemButton);
+            }
+        };
+
+        itemButton.onclick = () => {
+            if (!menuCategory.children) {
+                openArchive(menuCategory.name, menuCategory.path);
+            }
+        };
+    }
+
+    element.appendChild(applicationsList);
+
+    element.onmouseleave = () => {
+        element.removeChild(applicationsList);
+    };
+}
+
+function openStartMenu() {
     isStartMenuActive = !isStartMenuActive;
     const startMenu = document.getElementById("start-menu");
 

@@ -47,6 +47,8 @@
     border-color: var(--dark);
     border-right-color: var(--light);
     border-bottom-color: var(--light);
+    background: var(--bg-title);
+    color: white;
 }
 
 #breadcrumb {

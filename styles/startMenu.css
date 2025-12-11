@@ -4,9 +4,10 @@
     height: 55%;
     left: 8px;
     bottom: 32px;
+
     display: flex;
-    flex-direction: row;
     background: var(--button);
+
     border: 2px solid var(--light);
     border-right-color: var(--dark);
     border-bottom-color: var(--dark);
@@ -16,9 +17,11 @@
     width: 40px;
     height: 100%;
     background-color: var(--bg-title);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     border: 2px solid var(--dark);
     border-right-color: var(--light);
     border-bottom-color: var(--light);
@@ -27,6 +30,7 @@
 .label p {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+
     color: white;
     font-weight: bold;
     margin: 0;
@@ -40,60 +44,93 @@
     height: 100%;
 }
 
-#applications button {
+#start-menu button {
     margin: 6px 0;
     width: 100%;
-    background: var(--button);
     padding: 6px;
+
     text-align: left;
+    background: var(--button);
+
     border: 2px solid var(--light);
     border-right-color: var(--dark);
     border-bottom-color: var(--dark);
 }
 
-#applications button:active {
+#start-menu button:hover {
     border: 2px solid var(--dark);
     border-right-color: var(--light);
     border-bottom-color: var(--light);
+
+    background: var(--bg-title);
+    color: white;
 }
 
-#applications .github {
+#start-menu .github {
     margin-top: auto;
 }
 
-.sideProfile {
-    border: 1px solid red;
+.side-profile {
     width: 50%;
-    flex-direction: column;
     height: 100%;
     background-color: var(--bg-title);
-    display: flex;
+
+    text-align: center;
+    color: white;
+
     border: 2px solid var(--dark);
     border-right-color: var(--light);
     border-bottom-color: var(--light);
-    color: white;
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.sideProfile img {
-    position: relative;
+.side-profile-img {
     height: 20%;
     margin: -32px auto;
+
     border: 2px solid var(--light);
     border-right-color: var(--dark);
     border-bottom-color: var(--dark);
 }
 
-.sideProfile p {
-    margin-top: 35%;
+.side-profile p {
+    margin-top: 50%;
 }
 
-.socialMedia {
-    width: 90%;
-    margin: auto auto var(--padding) auto;
+.sub-menu-div {
+    z-index: 99;
+    position: absolute;
+
     background-color: var(--button);
-    padding: var(--padding);
+    min-width: 128px;
+    width: max-content;
+
     border: 2px solid var(--light);
     border-right-color: var(--dark);
     border-bottom-color: var(--dark);
+}
+
+.side-profile-button {
+    width: 90% !important;
+    align-self: center;
+}
+
+.sub-menu-button {
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding);
+    color: var(--bg-title);
+    justify-content: space-between;
+}
+
+.sub-menu-button:hover {
+    padding: var(--padding);
+    background: var(--bg-title);
+    color: white;
+}
+
+.category-icon {
+    width: 16px;
 }

@@ -22,7 +22,7 @@
         </div>
 
         <div class="desktop-icon"
-            onclick="openArchive('My Final Paper - Landing Page', 'https://refractionsofgreed.vercel.app')">
+            onclick="openArchive('My Final Project - Landing Page', 'https://refractionsofgreed.vercel.app')">
             <img src="assets/icons/gear.png" />
             <span>Final Project</span>
         </div>
@@ -82,7 +82,7 @@
 
     <!-- Barra de Tarefas -->
     <div class="taskbar">
-        <button onclick="startMenu()" class="taskbar-icons">
+        <button onclick="openStartMenu()" class="taskbar-icons">
             <img class="start-icon" src="assets/icons/tux.png" />
             <p>Start</p>
         </button>
@@ -95,19 +95,18 @@
             <p>Ryan Ferreira</p>
         </div>
         <div id="applications">
-            <button>Item 1</button>
-            <button>Item 2</button>
-            <button>Item 3</button>
+            <button onmouseenter="showCategory('Test', this)">Item 1</button>
             <button class="github">Github Profile</button>
         </div>
-        <div class="sideProfile">
-            <img src="https://avatars.githubusercontent.com/u/198508806" alt="My Github Profile Picture">
-            <p>Ferreira, Ryan</p>
-            <button class="socialMedia">Social</button>
+        <div class="side-profile">
+            <img class="side-profile-img" src="https://avatars.githubusercontent.com/u/198508806"
+                alt="My Github Profile Picture">
+            <p>Hello there!</p>
+            <button class="side-profile-button" onmouseenter="showCategory('social', this)">Social</button>
         </div>
     </div>
 
-    <script src="scripts/taskbar.js"></script>
+    <script src=" scripts/taskbar.js"></script>
     <script src="scripts/fileExplorer.js"></script>
     <script src="scripts/startMenu.js"></script>
     <script src="scripts/windowManagement.js"></script>

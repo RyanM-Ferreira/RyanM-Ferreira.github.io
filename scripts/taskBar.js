@@ -1,5 +1,4 @@
 window.onload = updateClock;
-setInterval(updateClock, 1000);
 
 function updateClock() {
     const now = new Date();
@@ -11,3 +10,5 @@ function updateClock() {
 
     document.getElementById("clock").textContent = `${day}/${month}/${year}\n${hour}:${minute}`;
 }
+
+setInterval(updateClock, 1000);
