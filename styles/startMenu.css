@@ -74,6 +74,7 @@
     width: 50%;
     height: 100%;
     background-color: var(--bg-title);
+    padding: var(--padding);
 
     text-align: center;
     color: white;
@@ -112,9 +113,10 @@
     border-bottom-color: var(--dark);
 }
 
-.side-profile-button {
-    width: 90% !important;
+.category-submenu-button {
     align-self: center;
+    display: flex;
+    justify-content: space-between !important;
 }
 
 .sub-menu-button {

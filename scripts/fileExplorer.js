@@ -102,15 +102,8 @@ function updateArchives(categoryOrChildren, mustReset = false) {
                 navigationHistory.push(items);
                 updateArchives(archive.children);
             } else {
-                openArchive(archive.name, archive.path);
+                createWindow(archive.name, archive.path);
             }
         };
     }
-}
-
-function openArchive(title, url) {
-    document.getElementById("viewer-title").textContent = title;
-    document.getElementById("viewer-frame").src = url;
-
-    openWindow("window-viewer");
 }

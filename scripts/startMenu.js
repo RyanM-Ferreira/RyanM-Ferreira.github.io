@@ -7,7 +7,7 @@ const category = {
         { name: "LinkedIn", path: "", icon: "assets/icons/gear.png" }
     ],
     Test: [
-        { name: "Desktop.ini", path: "../index.html", icon: "assets/icons/gear.png" },
+        { name: "Desktop.ini", path: "index.html", icon: "assets/icons/gear.png" },
         {
             name: "Submenu", icon: "assets/icons/arrow.png",
             children: [
@@ -58,7 +58,8 @@ function showCategory(categoryOrChildren, thisElement) {
 
         itemButton.onclick = () => {
             if (!menuCategory.children) {
-                openArchive(menuCategory.name, menuCategory.path);
+                console.log(`Opening ${menuCategory.name} in ${menuCategory.path}...`);
+                createWindow(menuCategory.name, menuCategory.path);
             }
         };
     }

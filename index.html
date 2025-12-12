@@ -4,79 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Ryan Ferreira</title>
     <link rel="stylesheet" href="stylesGlobal.css">
     <link rel="stylesheet" href="styles/windows.css">
     <link rel="stylesheet" href="styles/fileExplorer.css">
     <link rel="stylesheet" href="styles/startMenu.css">
     <link rel="stylesheet" href="styles/taskbar.css">
     <link rel="stylesheet" href="styles/desktop.css">
+    <title>Portfolio - Ryan Ferreira</title>
 </head>
 
 <body>
     <!-- Atalhos -->
     <div class="shortcuts">
-        <div class="desktop-icon" onclick="openWindow('explorer')">
+        <div class="desktop-icon" onclick="createExplorer()">
             <img src="assets/icons/folder.png" />
             <span>My projects</span>
         </div>
 
         <div class="desktop-icon"
-            onclick="openArchive('My Final Project - Landing Page', 'https://refractionsofgreed.vercel.app')">
+            onclick="createWindow('My Final Project - Landing Page', 'https://refractionsofgreed.vercel.app')">
             <img src="assets/icons/gear.png" />
             <span>Final Project</span>
-        </div>
-    </div>
-
-    <!-- Explorador de Arquivos -->
-    <div id="explorer" class="window shadow inside" style="top:48px; left:196px;">
-        <div onpointerdown="drag(event, 'explorer')" class="title-bar">
-            <span>Explorer.exe - My Projects</span>
-            <div class="window-buttons">
-                <button onclick="maximizeWindow('explorer')">O</button>
-                <button onclick="closeWindow('explorer')">X</button>
-            </div>
-        </div>
-
-        <div class="folders">
-            <div class="folder" onclick="updateArchives('about', true)">
-                <img src="assets/icons/folder.png" />
-                <div>About me</div>
-            </div>
-
-            <div class="folder" onclick="updateArchives('cSharp', true)">
-                <img src="assets/icons/folder.png" />
-                <div>C#</div>
-            </div>
-
-            <div class="folder" onclick="updateArchives('thesis', true)">
-                <img src="assets/icons/folder.png" />
-                <div>Thesis</div>
-            </div>
-
-            <div class="folder" onclick="updateArchives('test', true)">
-                <img src="assets/icons/folder.png" />
-                <div>File test</div>
-            </div>
-        </div>
-
-        <div id="breadcrumb" class="breadcrumb">
-        </div>
-        <div id="file-list" class="file-list"></div>
-    </div>
-
-    <!-- Janela do iframe -->
-    <div id="window-viewer" class="window shadow inside" style="top:96px; left:256px;">
-        <div onpointerdown="drag(event, 'window-viewer')" class="title-bar">
-            <span id="viewer-title">Arquivo</span>
-            <div class="window-buttons">
-                <button onclick="maximizeWindow('window-viewer')">O</button>
-                <button onclick="closeWindow('window-viewer')">X</button>
-            </div>
-        </div>
-
-        <div id="viewer">
-            <iframe id="viewer-frame"></iframe>
         </div>
     </div>
 
@@ -90,39 +38,31 @@
         <button class="taskbar-icons" id="clock">00/00/0000 | --:--</button>
     </div>
 
+    <!-- Menu Iniciar -->
     <div id="start-menu">
         <div class="label">
             <p>Ryan Ferreira</p>
         </div>
+        <!-- Área dos Menus -->
         <div id="applications">
-            <button onmouseenter="showCategory('Test', this)">Item 1</button>
-            <button class="github">Github Profile</button>
+            <button class="category-submenu-button" onmouseenter="showCategory('Test', this)">Item 1
+                <img class="category-icon" src="assets/icons/arrow.png" />
+            </button>
+            <button onclick="createExplorer()" class="github">Open Test Window (Explorer)</button>
         </div>
+        <!-- Barra lateral -->
         <div class="side-profile">
             <img class="side-profile-img" src="https://avatars.githubusercontent.com/u/198508806"
                 alt="My Github Profile Picture">
             <p>Hello there!</p>
-            <button class="side-profile-button" onmouseenter="showCategory('social', this)">Social</button>
+            <button class="category-submenu-button" onmouseenter="showCategory('social', this)">Social
+                <img class="category-icon" src="assets/icons/arrow.png" />
+            </button>
         </div>
     </div>
 
-    <script>
-        window.onload = updateClock;
-
-        function updateClock() {
-            const now = new Date();
-            const day = String(now.getDate());
-            const month = String(now.getMonth());
-            const year = String(now.getFullYear());
-            const hour = String(now.getHours()).padStart(2, "0");
-            const minute = String(now.getMinutes()).padStart(2, "0");
-
-            document.getElementById("clock").textContent = `${day}/${month}/${year}\n${hour}:${minute}`;
-        }
-
-        setInterval(updateClock, 1000);
-    </script>
-
+    <script src="scripts/applications.js"></script>
+    <script src="scripts/taskBar.js"></script>
     <script src="scripts/fileExplorer.js"></script>
     <script src="scripts/startMenu.js"></script>
     <script src="scripts/windowManagement.js"></script>

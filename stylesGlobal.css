@@ -17,6 +17,10 @@ html,
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 @font-face {
@@ -41,4 +45,22 @@ body {
 
 .shadow {
     box-shadow: -4px 4px 0 var(--shadow);
+}
+
+@media (max-width: 720px) {
+    #start-menu {
+        width: 75% !important;
+        height: 50% !important;
+    }
+
+    .window {
+        width: 70% !important;
+        height: auto !important;
+    }
+
+    .file-list {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
 }

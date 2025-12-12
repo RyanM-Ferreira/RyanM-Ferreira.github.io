@@ -1,0 +1,51 @@
+<!-- Explorador de Arquivos - Template -->
+<div id="explorer" class="window shadow inside" style="top:48px; left:196px;">
+    <div onpointerdown='drag(event, "explorer")' class="title-bar">
+        <span>Explorer.exe - My Projects</span>
+        <div class="window-buttons">
+            <button onclick="maximizeWindow('explorer')">O</button>
+            <button onclick="closeWindow('explorer')">X</button>
+        </div>
+    </div>
+
+    <div class="folders">
+        <div class="folder" onclick="updateArchives('about', true)">
+            <img src="/assets/icons/folder.png" />
+            <div>About me</div>
+        </div>
+
+        <div class="folder" onclick="updateArchives('cSharp', true)">
+            <img src="/assets/icons/folder.png" />
+            <div>C#</div>
+        </div>
+
+        <div class="folder" onclick="updateArchives('thesis', true)">
+            <img src="/assets/icons/folder.png" />
+            <div>Thesis</div>
+        </div>
+
+        <div class="folder" onclick="updateArchives('test', true)">
+            <img src="/assets/icons/folder.png" />
+            <div>File test</div>
+        </div>
+    </div>
+
+    <div id="breadcrumb" class="breadcrumb">
+    </div>
+    <div id="file-list" class="file-list"></div>
+</div>
+
+<!-- Janela do iframe - Template -->
+<div id="window-viewer" class="window shadow inside" style="top:96px; left:256px;">
+    <div onpointerdown="drag(event, 'window-viewer')" class="title-bar">
+        <span id="viewer-title">Arquivo</span>
+        <div class="window-buttons">
+            <button onclick="maximizeWindow('window-viewer')">O</button>
+            <button onclick="closeWindow('window-viewer')">X</button>
+        </div>
+    </div>
+
+    <div id="viewer">
+        <iframe id="viewer-frame"></iframe>
+    </div>
+</div>
