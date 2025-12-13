@@ -1,5 +1,6 @@
 /* Barra de Tarefas */
 .taskbar {
+    z-index: 2;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -24,7 +25,7 @@
     border: 2px solid var(--light);
     border-right-color: var(--dark);
     border-bottom-color: var(--dark);
-    cursor: pointer;
+    cursor: url("../assets/click.png"), pointer;
 }
 
 #clock {

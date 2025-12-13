@@ -30,17 +30,46 @@ body {
 
 * {
     image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    -webkit-font-smoothing: none;
     font-family: pixelFont;
     border-radius: 0 !important;
     box-sizing: border-box;
     user-select: none;
+    transition: width 0.25s, height 0.25s, background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    cursor: url("assets/cursor.png"), auto;
+}
+
+a,
+button {
+    cursor: url("assets/click.png"), pointer;
 }
 
 body {
-    background: var(--bg-desktop);
+    background: url("assets/images/wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: var(--bg-window);
+
+    border: 2px solid var(--dark);
+    border-right-color: var(--light);
+    border-top-color: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: var(--bg-title);
+
+    border: 2px solid var(--light);
+    border-right-color: var(--dark);
+    border-top-color: var(--dark);
 }
 
 .shadow {

@@ -7,6 +7,7 @@
 
     display: flex;
     background: var(--button);
+    z-index: 2;
 
     border: 2px solid var(--light);
     border-right-color: var(--dark);
@@ -101,7 +102,6 @@
 }
 
 .sub-menu-div {
-    z-index: 99;
     position: absolute;
 
     background-color: var(--button);
@@ -135,4 +135,5 @@
 
 .category-icon {
     width: 16px;
+    margin-left: var(--padding);
 }
