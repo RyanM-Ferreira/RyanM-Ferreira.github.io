@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateClock() {
     const now = new Date();
     const day = String(now.getDate());
-    const month = String(now.getMonth());
+    const month = String(now.getMonth() + 1);
     const year = String(now.getFullYear());
     const hour = String(now.getHours()).padStart(2, "0");
     const minute = String(now.getMinutes()).padStart(2, "0");

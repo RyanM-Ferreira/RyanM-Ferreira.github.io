@@ -46,9 +46,9 @@ const archives = {
         },
         { name: "Landing Page - Refractions of Greed", path: "https://refractionsofgreed.vercel.app", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/Refractions-of-Greed---Landing-Page" }
     ],
-    javascript: {
-        
-    },
+    javascript: [
+        { name: "My Porfolio (this project)", path: "https://ryanm-ferreira.github.io/", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/RyanM-Ferreira.github.io" }
+    ],
     internal: [
         { name: "About this project", path: "pages/template.html", icon: "assets/icons/gear.png" },
         { name: "Launch other desktop instance", path: "index.html", icon: "assets/icons/gear.png" }
@@ -156,7 +156,7 @@ function createExplorer() {
     updateWindowPosition();
 
     explorer.style.top = windowPosition + 'px';
-    explorer.style.left = (windowPosition * leftWindowPositionMultiplier) + 'px';
+    explorer.style.left = windowPosition + 'px';
 
     explorer.id = windowId;
     explorer.className = "window shadow inside";

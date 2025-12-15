@@ -1,9 +1,9 @@
 let openedWindows = [];
 let windowCounter = 0;
 
-let windowPositionMultiplier = 20;
-let leftWindowPositionMultiplier = 1;
-let windowPosition = windowPositionMultiplier;
+let windowPositionMultiplier = 30;
+let windowPosition = 20;
+let windowPositionX = 1;
 
 function drag(e, id) {
     const element = document.getElementById(id);
@@ -47,7 +47,7 @@ function updateOpenedWindows(windowId) {
 }
 
 function checkWindowLimit() {
-    var windowLimit = 25;
+    var windowLimit = 50;
     openedWindows = openedWindows.filter(id => document.getElementById(id));
 
     if (openedWindows.length >= windowLimit) {
@@ -62,35 +62,26 @@ function checkWindowLimit() {
 }
 
 function updateWindowPosition() {
-    windowPosition = windowCounter * windowPositionMultiplier;
+    windowPosition += windowPositionMultiplier;
 
-    var resetPositionY = windowCounter % 10 == 0;
-    var resetPositionX = leftWindowPositionMultiplier % 10 == 0;
+    resetPosition = windowCounter % 10 === 0;
 
-    if (resetPositionY) {
-        windowPositionMultiplier /= 1.5;
+    if (resetPosition) {
         windowPosition = windowPositionMultiplier;
-        leftWindowPositionMultiplier += 0.5;
     }
-
-    if (resetPositionX) {
-        windowPosition = windowPositionMultiplier;
-        leftWindowPositionMultiplier = 1;
-    }
-
-    console.log("Position: ", windowPosition, "\n\n", "Left Multiplier: ", leftWindowPositionMultiplier);
 
     return windowPosition;
 }
 
 function createWindow(windowTitle, windowPath) {
-    const windowId = windowCounter++;
-
     updateWindowPosition();
+
+    const windowId = windowCounter++;
 
     const windowDiv = document.createElement('div');
     windowDiv.id = windowId;
     windowDiv.classList.add('window', 'shadow', 'inside');
+
     windowDiv.style.top = windowPosition + 'px';
     windowDiv.style.left = windowPosition + 'px';
 
@@ -149,7 +140,7 @@ function maximizeWindow(id) {
     const windowElement = document.getElementById(id);
 
     if (!windowElement.dataset.maximized) {
-        getWindowDataset(windowElement);
+        getWindowPosition(windowElement);
 
         windowElement.style.top = "0px";
         windowElement.style.left = "0px";
@@ -160,23 +151,23 @@ function maximizeWindow(id) {
         return;
     }
 
-    resetWindowDataset(windowElement);
+    resetWindowPosition(windowElement);
 }
 
 function closeWindow(id) {
     const windowElement = document.getElementById(id);
-    resetWindowDataset(windowElement);
+    resetWindowPosition(windowElement);
     windowElement.remove();
 }
 
-function getWindowDataset(windowElement) {
+function getWindowPosition(windowElement) {
     windowElement.dataset.oldWidth = windowElement.offsetWidth;
     windowElement.dataset.oldHeight = windowElement.offsetHeight;
     windowElement.dataset.oldLeft = windowElement.offsetLeft;
     windowElement.dataset.oldTop = windowElement.offsetTop;
 }
 
-function resetWindowDataset(windowElement) {
+function resetWindowPosition(windowElement) {
     windowElement.style.width = windowElement.dataset.oldWidth + "px";
     windowElement.style.height = windowElement.dataset.oldHeight + "px";
     windowElement.style.left = windowElement.dataset.oldLeft + "px";

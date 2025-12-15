@@ -4,26 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="stylesGlobal.css">
     <link rel="stylesheet" href="styles/windows.css">
     <link rel="stylesheet" href="styles/fileExplorer.css">
     <link rel="stylesheet" href="styles/startMenu.css">
     <link rel="stylesheet" href="styles/taskbar.css">
     <link rel="stylesheet" href="styles/desktop.css">
-    <title>Portfolio - Ryan Ferreira</title>
+
+    <link rel="icon" href="assets/icons/tux.png" type="image/png">
+
+    <meta name="description"
+        content="Portfolio of Ryan Ferreira, a developer in training focused on Systems Analysis and Development. Includes original projects and experiments.">
+    <meta name="author" content="Ryan Ferreira">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ryan Ferreira Portfolio">
+    <meta property="og:title" content="Ryan Ferreira | Interactive Portfolio">
+    <meta property="og:description"
+        content="An interactive portfolio in the form of an operating system. Projects, ideas, and code.">
+    <meta property="og:url" content="https://ryanm-ferreira.github.io/">
+    <meta property="og:image" content="https://ryanm-ferreira.github.io/assets/icons/tux.png">
+
+    <title>Ryan Ferreira | Interactive Portfolio</title>
 </head>
 
 <body>
     <!-- Atalhos -->
     <div class="shortcuts">
         <div class="desktop-icon" onclick="createExplorer()">
-            <img src="assets/icons/folder.png" />
+            <img src="assets/icons/folder.png" alt="My Projects Icon" />
             <span>My projects</span>
         </div>
 
         <div class="desktop-icon"
             onclick="createWindow('My Final Project - Landing Page', 'https://refractionsofgreed.vercel.app')">
-            <img src="assets/icons/gear.png" />
+            <img src="assets/icons/gear.png" alt="Project Icon" />
             <span>Final Project</span>
         </div>
     </div>
@@ -31,7 +47,7 @@
     <!-- Barra de Tarefas -->
     <div class="taskbar">
         <button onclick="openStartMenu()" class="taskbar-icons">
-            <img class="start-icon" src="assets/icons/tux.png" />
+            <img class="start-icon" src="assets/icons/tux.png" alt="Star Menu Icon" />
             <p>Start</p>
         </button>
 
@@ -45,10 +61,10 @@
         </div>
         <!-- Área dos Menus -->
         <div id="applications">
-            <button class="category-submenu-button" onmouseenter="showCategory('about', this)">About System <img
-                    class="category-icon" src="assets/icons/arrow.png" /> </button>
-            <button class="category-submenu-button" onmouseenter="showCategory('utilities', this)">Utilities<img
-                    class="category-icon" src="assets/icons/arrow.png" /> </button>
+            <button class="category-submenu-button" onmouseenter="showCategory('about', this)">About System
+                <img class="category-icon" src="assets/icons/arrow.png" alt="About System Expand Icon" /> </button>
+            <button class="category-submenu-button" onmouseenter="showCategory('utilities', this)">Utilities
+                <img class="category-icon" src="assets/icons/arrow.png" alt="Utilities Expand Icon" /> </button>
             <button onclick="createExplorer()" class="github">Open Test Window (Explorer)</button>
         </div>
         <!-- Barra lateral -->
@@ -57,7 +73,7 @@
                 alt="My Github Profile Picture">
             <p>Hello there!</p>
             <button class="category-submenu-button" onmouseenter="showCategory('social', this)">Social
-                <img class="category-icon" src="assets/icons/arrow.png" />
+                <img class="category-icon" src="assets/icons/arrow.png" alt="Social Expand Icon" />
             </button>
         </div>
     </div>
