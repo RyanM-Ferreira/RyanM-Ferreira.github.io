@@ -1,4 +1,4 @@
-/* Ícones */
+/* Shortcut icons */
 .shortcuts {
     padding: 16px;
     display: flex;
@@ -9,7 +9,7 @@
 .desktop-icon {
     width: 70px;
     text-align: center;
-    cursor: pointer;
+    cursor: url("../assets/click.png"), pointer;
 }
 
 .desktop-icon img {

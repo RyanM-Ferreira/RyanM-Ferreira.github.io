@@ -1,60 +1,3 @@
-const archives = {
-    about: [
-        { name: "About Me", path: "Error 404", icon: "assets/icons/gear.png" },
-    ],
-    c_scharp: [
-        {
-            name: "Console", icon: "assets/icons/folder.png",
-            children: [
-                {
-                    name: "Snake Game on Console", path: "https://github1s.com/RyanM-Ferreira/snake-game-csharp-cli", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/snake-game-csharp-cli.git"
-                }
-            ]
-        },
-        {
-            name: "Godot", icon: "assets/icons/folder.png",
-            children: [
-                {
-                }
-            ]
-        }
-    ],
-    cpp: [
-        {
-            name: "Console", icon: "assets/icons/folder.png",
-            children: [
-                {
-                    name: "Space Invaders on Console", path: "https://github.com/RyanM-Ferreira/space-invaders-cpp-cli", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/space-invaders-cpp-cli"
-                }
-            ]
-        }
-    ],
-    thesis: [
-        {
-            name: "Other Files and Download", icon: "assets/icons/openFolder.png",
-            children: [
-                {
-                    name: "Itch.io", path: "pages/tcc/itch.html", icon: "assets/icons/gear.png",
-                },
-                {
-                    name: "Other Files", icon: "assets/icons/folder.png",
-                    children: [
-                        { name: "Banner", path: "pages/tcc/banner.html", icon: "assets/icons/gear.png", },
-                    ]
-                }
-            ]
-        },
-        { name: "Landing Page - Refractions of Greed", path: "https://refractionsofgreed.vercel.app", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/Refractions-of-Greed---Landing-Page" }
-    ],
-    javascript: [
-        { name: "My Porfolio (this project)", path: "https://ryanm-ferreira.github.io/", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/RyanM-Ferreira.github.io" }
-    ],
-    internal: [
-        { name: "About this project", path: "pages/template.html", icon: "assets/icons/gear.png" },
-        { name: "Launch other desktop instance", path: "index.html", icon: "assets/icons/gear.png" }
-    ]
-};
-
 const navigationHistory = {};
 
 function updateArchives(windowId, categoryOrChildren, mustReset = false) {
@@ -143,7 +86,12 @@ function updateArchives(windowId, categoryOrChildren, mustReset = false) {
                 history.push(items);
                 updateArchives(windowId, archive.children);
             } else {
-                createWindow(archive.name, archive.path);
+                if (!archive.children) {
+                    projectId = (archive.additional !== null) ? archive.additional : null;
+
+                    console.log(archive.additional, "\n", projectId);
+                    createWindow(archive.name, archive.path, projectId);
+                }
             }
         };
     }

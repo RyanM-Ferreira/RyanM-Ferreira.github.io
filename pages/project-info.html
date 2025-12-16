@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About project</title>
+
+    <link rel="stylesheet" href="/styles-global.css">
+    <link rel="stylesheet" href="/styles/project-info.css">
+</head>
+
+<body>
+    <div class="project-page">
+        <header class="project-header">
+            <h1 id="project-title" class="project-title">Title</h1>
+
+            <div class="project-meta">
+                <span id="project-status" class="status">Status</span>
+                <span id="project-year">Year</span>
+                <a id="project-github" class="github-repository" target="_blank" rel="noopener">
+                    <img src="/assets/icons/github.png" alt="GitHub">GitHub repository
+                </a>
+            </div>
+        </header>
+
+        <div class="project-main">
+            <!-- Left Collumn -->
+            <div class="column column-left">
+                <div class="section">
+                    <div class="section-title">
+                        <img src="/assets/icons/folder.png" alt=""> Description
+                    </div>
+
+                    <p id="project-description">
+                        Project descriptoin goes here...
+                    </p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <img src="/assets/icons/gear.png" alt="">
+                        What was used:
+                    </div>
+
+                    <div id="tech-list" class="tech-list"></div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <img src="/assets/icons/tux.png" alt="">
+                        Author's notes
+                    </div>
+                    <p id="project-notes">
+                        Author's notes goes here...
+                    </p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">README.md</div>
+                    <pre id="readme" class="readme">Readme goes here...</pre>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="column">
+                <div class="section main-image">
+                    <div class="section-title"> <img src="/assets/icons/open-folder.png" alt=""> Preview </div>
+                    <img id="preview-image" class="preview" src="" alt="">
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <img src="/assets/icons/arrow.png" alt=""> Gallery
+                    </div>
+
+                    <div id="gallery" class="gallery">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/project-info.js"></script>
+    <script src="/data/project-data.js"></script>
+</body>
+
+</html>

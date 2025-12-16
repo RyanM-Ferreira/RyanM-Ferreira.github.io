@@ -1,7 +1,7 @@
 :root {
     --bg-desktop: #b8a7ff;
     --bg-window: #ede5ff;
-    --bg-title: #7c63ea;
+    --bg-title: #8167f7;
 
     --button: #d9d2ff;
 
@@ -33,6 +33,7 @@ body {
     font-family: pixelFont;
     border-radius: 0 !important;
     box-sizing: border-box;
+    -webkit-user-select: none;
     user-select: none;
     transition: width 0.25s, height 0.25s, background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
     cursor: url("assets/cursor.png"), auto;
@@ -80,11 +81,6 @@ body {
     #start-menu {
         width: 75% !important;
         height: 50% !important;
-    }
-
-    .window {
-        width: 70% !important;
-        height: auto !important;
     }
 
     .file-list {

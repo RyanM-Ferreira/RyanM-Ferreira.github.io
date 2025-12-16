@@ -15,7 +15,12 @@ function drag(e, id) {
     const minY = 0;
     const maxY = window.innerHeight - correctPos;
 
+    updateWindowIndex(element);
+
+    console.log("Drag");
+
     function move(e) {
+
         if (element.dataset.maximized === "true") {
             return;
         }
@@ -38,8 +43,21 @@ function drag(e, id) {
         document.removeEventListener("pointerup", drop);
     }
 
-    document.addEventListener("pointermove", move);
     document.addEventListener("pointerup", drop);
+    document.addEventListener("pointermove", move);
+}
+
+function updateWindowIndex(element) {
+    var selectedElement = element;
+    selectedElement.style.zIndex = 1;
+
+    for (let window of openedWindows) {
+        window = document.getElementById(window);
+
+        if (selectedElement != window && window !== null) {
+            window.style.zIndex = 0;
+        }
+    }
 }
 
 function updateOpenedWindows(windowId) {
@@ -48,13 +66,12 @@ function updateOpenedWindows(windowId) {
 
 function checkWindowLimit() {
     var windowLimit = 50;
-    openedWindows = openedWindows.filter(id => document.getElementById(id));
 
     if (openedWindows.length >= windowLimit) {
         alert("You have reached the maximum number of opened windows. All windows will be closed.");
 
-        for (let i = 0; i < openedWindows.length; i++) {
-            closeWindow(openedWindows[i]);
+        for (let window of openedWindows) {
+            closeWindow(openedWindows[window]);
         }
 
         openedWindows = [];
@@ -73,7 +90,7 @@ function updateWindowPosition() {
     return windowPosition;
 }
 
-function createWindow(windowTitle, windowPath) {
+function createWindow(windowTitle, windowPath, projectId = null) {
     updateWindowPosition();
 
     const windowId = windowCounter++;
@@ -127,13 +144,18 @@ function createWindow(windowTitle, windowPath) {
     windowDiv.appendChild(titleBar);
     windowDiv.appendChild(viewerDiv);
 
-    document.body.appendChild(windowDiv);
-
     title.textContent = windowTitle;
     iframe.src = windowPath;
 
+    document.body.appendChild(windowDiv);
+
+    iframe.onload = () => {
+        if (projectId) {
+            iframe.contentWindow.loadProject(projectId);
+        }
+    };
+
     checkWindowLimit();
-    updateOpenedWindows(windowId);
 }
 
 function maximizeWindow(id) {
@@ -144,8 +166,8 @@ function maximizeWindow(id) {
 
         windowElement.style.top = "0px";
         windowElement.style.left = "0px";
-        windowElement.style.width = '100vw';
-        windowElement.style.height = '95vh';
+        windowElement.style.width = '100%';
+        windowElement.style.height = '95%';
         windowElement.dataset.maximized = "true";
 
         return;
@@ -158,6 +180,7 @@ function closeWindow(id) {
     const windowElement = document.getElementById(id);
     resetWindowPosition(windowElement);
     windowElement.remove();
+    return;
 }
 
 function getWindowPosition(windowElement) {
@@ -165,6 +188,7 @@ function getWindowPosition(windowElement) {
     windowElement.dataset.oldHeight = windowElement.offsetHeight;
     windowElement.dataset.oldLeft = windowElement.offsetLeft;
     windowElement.dataset.oldTop = windowElement.offsetTop;
+    return;
 }
 
 function resetWindowPosition(windowElement) {
@@ -176,4 +200,6 @@ function resetWindowPosition(windowElement) {
     for (const data in windowElement.dataset) {
         delete windowElement.dataset[data];
     }
+
+    return;
 }

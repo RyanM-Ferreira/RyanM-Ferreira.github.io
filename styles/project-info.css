@@ -1,0 +1,148 @@
+ body {
+     background: var(--bg-desktop);
+ }
+
+ .project-page {
+     padding: 16px;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     height: 100%;
+     overflow-y: auto;
+ }
+
+ .project-header {
+     background: var(--bg-window);
+     border: 2px solid var(--light);
+     border-right-color: var(--dark);
+     border-bottom-color: var(--dark);
+     padding: var(--padding);
+ }
+
+ .project-title {
+     margin: 0;
+     font-size: 20px;
+     color: var(--bg-title);
+ }
+
+ .project-meta {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     margin-top: 6px;
+     font-size: 12px;
+ }
+
+ .status {
+     background: var(--bg-title);
+     color: white;
+     padding: calc(var(--padding) / 2);
+ }
+
+ span {
+     color: var(--bg-title);
+ }
+
+ .project-main {
+     display: flex;
+     gap: 16px;
+ }
+
+ .column {
+     width: 60%;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+ }
+
+ .column-left {
+     max-width: 40%;
+ }
+
+ .section {
+     background: var(--bg-window);
+     padding: var(--padding);
+     border: 2px solid var(--light);
+     border-right-color: var(--dark);
+     border-bottom-color: var(--dark);
+ }
+
+ .section-title {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     font-size: 14px;
+     margin-bottom: 6px;
+     color: var(--bg-title);
+ }
+
+ .section-title img {
+     width: 16px;
+ }
+
+ .tech-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 4px;
+     justify-content: space-between;
+ }
+
+ .tech {
+     flex: 1;
+     background: var(--button);
+     padding: 4px 6px;
+     border: 2px solid var(--light);
+     border-right-color: var(--dark);
+     border-bottom-color: var(--dark);
+     font-size: 12px;
+ }
+
+ .main-image {
+     text-align: center;
+ }
+
+ .github-repository {
+     font-size: medium;
+     display: flex;
+     align-items: center;
+     padding: calc(var(--padding) / 2);
+ }
+
+ .github-repository img {
+     width: 20px;
+ }
+
+ .preview {
+     width: 75%;
+     margin: auto;
+     border: 2px solid var(--dark);
+ }
+
+ .gallery {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 4px;
+     justify-content: safe;
+ }
+
+ .gallery img {
+     width: 30%;
+     flex: 1;
+     border: 2px solid var(--dark);
+ }
+
+ .readme {
+     white-space: pre-wrap;
+     font-size: 13px;
+     line-height: 1.4;
+ }
+
+ a {
+     color: var(--bg-title);
+     text-decoration: underline dotted;
+ }
+
+ a:hover {
+     background: var(--bg-title);
+     color: white;
+ }

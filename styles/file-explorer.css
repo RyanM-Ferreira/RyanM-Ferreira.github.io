@@ -1,4 +1,4 @@
-/* Área dos arquivos */
+/* Files */
 .file-list {
     padding: 16px;
     border-top: 2px solid var(--bg-title);
@@ -34,18 +34,12 @@
     border-bottom-color: var(--light);
     background: var(--bg-title);
     color: white;
+
+    .git-div a {
+        color: white;
+    }
 }
 
-/* Ícones */
-.file-icon {
-    width: 24px;
-}
-
-.file-content {
-    flex: 1;
-}
-
-/* Arquivo */
 .file-button {
     width: 20%;
     background: var(--button);
@@ -64,7 +58,16 @@
     color: white;
 }
 
-/* Caminho dos aruqivos */
+/* Icons */
+.file-icon {
+    width: 24px;
+}
+
+.file-content {
+    flex: 1;
+}
+
+/* File Path */
 #breadcrumb {
     margin: var(--padding) calc(var(--padding) * 2);
     border: 2px solid var(--light);
@@ -80,7 +83,7 @@
     padding: 0;
 }
 
-/*  layout  */
+/*  Layout  */
 .explorer-rect {
     display: flex;
     justify-content: space-between;
@@ -88,7 +91,7 @@
     height: 100%;
 }
 
-/* Pastas */
+/* Folders */
 .folders {
     padding: 16px;
     min-width: 25%;
@@ -151,6 +154,12 @@
     text-decoration-style: dotted;
 }
 
-.file-item:hover .git-div a {
+.git-div:hover {
     color: white;
+    border: 2px dotted white;
+
+    a {
+        text-decoration-line: none;
+        text-decoration-style: none;
+    }
 }

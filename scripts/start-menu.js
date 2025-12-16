@@ -1,44 +1,5 @@
 var isStartMenuActive = true;
 
-const category = {
-    social: [
-        { name: "Github Profile", path: "https://github.com/RyanM-Ferreira", icon: "assets/icons/github.png" },
-        { name: "Mail me", path: "mailto:ryanmatheusferreira@outlook.com.br", icon: "assets/icons/mail.png" },
-        { name: "LinkedIn", path: "", icon: "assets/icons/gear.png" }
-    ],
-    about: [
-        { name: "Desktop.ini", path: "index.html", icon: "assets/icons/gear.png" },
-        { name: "About this Project", path: "pages/template.html", icon: "assets/icons/gear.png" },
-        {
-            name: "Submenu", icon: "assets/icons/arrow.png",
-            children: [
-                { name: "Placeholder", path: "", icon: "assets/icons/gear.png" },
-                {
-                    name: "Other Submenu", icon: "assets/icons/arrow.png",
-                    children: [
-                        { name: "Mail me", path: "mailto:ryanmatheusferreira@outlook.com.br", icon: "assets/icons/mail.png" },
-                    ],
-                }
-            ],
-        },
-    ],
-    utilities: [
-        { name: "Desktop.ini", path: "index.html", icon: "assets/icons/gear.png" },
-        {
-            name: "System", icon: "assets/icons/arrow.png",
-            children: [
-                { name: "Placeholder", path: "", icon: "assets/icons/gear.png" },
-            ],
-        },
-        {
-            name: "Others", icon: "assets/icons/arrow.png",
-            children: [
-                { name: "Placeholder", path: "", icon: "assets/icons/gear.png" },
-            ],
-        },
-    ],
-};
-
 function showCategory(categoryOrChildren, thisElement) {
     const element = thisElement;
     const applicationsList = document.createElement("div");
@@ -74,8 +35,10 @@ function showCategory(categoryOrChildren, thisElement) {
 
         itemButton.onclick = () => {
             if (!menuCategory.children) {
-                console.log(`Opening ${menuCategory.name} in ${menuCategory.path}...`);
-                createWindow(menuCategory.name, menuCategory.path);
+                projectId = (menuCategory.additional !== null) ? menuCategory.additional : null;
+                
+                console.log (menuCategory.additional, "\n", projectId);
+                createWindow(menuCategory.name, menuCategory.path, projectId);
             }
         };
     }
