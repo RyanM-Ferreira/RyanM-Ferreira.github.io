@@ -30,7 +30,7 @@ window.archives = {
             name: "Godot Projects",
             icon: "assets/icons/folder.png",
             children: [
-                { name: "Refractions of Greed (Game Source)", path: "pages/project-info.html", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/refractions-of-greed", additional: 'refractions' }
+                { name: "Refractions of Greed", path: "pages/project-info.html", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/refractions-of-greed", additional: 'refractions' }
             ]
         }
     ],
@@ -48,10 +48,9 @@ window.archives = {
         { name: "KomuniUI", path: "pages/project-info.html", icon: "assets/icons/gear.png", git: "https://github.com/RyanM-Ferreira/komuniui-api", additional: 'komuniui' },
     ],
     about: [
-        { name: "About Me", path: "Error 404", icon: "assets/icons/gear.png" }
+        { name: "About Me", path: "pages/about-me.html", icon: "assets/icons/gear.png" }
     ],
     internal: [
-        { name: "About This Portfolio", path: "pages/template.html", icon: "assets/icons/gear.png", additional: 'porfolio' },
         { name: "Launch New Instance", path: "index.html", icon: "assets/icons/gear.png" }
     ]
 };

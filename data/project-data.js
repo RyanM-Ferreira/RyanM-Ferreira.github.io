@@ -23,10 +23,9 @@ window.projectData = {
         description: "A classic Snake game implemented in the console using C#.",
         technologies: ["C#", ".NET Console"],
         notes: "Simple recreation of the iconic Snake game, focused on console-based gameplay and logic.",
-        readme: "https://raw.githubusercontent.com/RyanM-Ferreira/snake-game-csharp-cli/main/README.md",
+        readme: "https://raw.githubusercontent.com/RyanM-Ferreira/snake-game-csharp-cli/main/readme.md",
         previewImage: "",
         gallery: [
-            "",
             "",
         ]
     },
@@ -37,7 +36,7 @@ window.projectData = {
         github: "https://github.com/RyanM-Ferreira/refractions-of-greed",
         description: "In Refractions of Greed, you control a character who discovers a mysterious artifact and becomes entangled in events that test their ambition. As you progress, new paths unlock, tougher enemies appear, and the line between power and self-destruction blurs. Ultimately, the greatest challenge is facing yourself and deciding if redemption is still possible. External evil is easy to fight; the real difficulty lies in confronting what's inside.",
         technologies: ["C#", "Godot Engine"],
-        notes: "A 2D Metroidvania developed as my High School Capstone Project (TCC) at ETEC Martinho Di Ciero, using Godot with C#. Inspired by The Legend of Zelda, Hollow Knight, and Dark Souls, it explores themes of greed and redemption through challenging gameplay and narrative.",
+        notes: "A 2D Metroidvania developed as my High School Final Project (TCC, in Brazil) at ETEC Martinho Di Ciero, using Godot with C#. Inspired by The Legend of Zelda, Hollow Knight, and Castlevania, it explores themes of greed and redemption through challenging gameplay and narrative.",
         readme: "https://raw.githubusercontent.com/RyanM-Ferreira/refractions-of-greed/main/README.md",
         previewImage: "https://img.itch.zone/aW1hZ2UvMzYzNjcyNy8yNDIyNDc5Ny5wbmc=/original/NA9tKe.png",
         gallery: [
@@ -58,7 +57,6 @@ window.projectData = {
         readme: "https://raw.githubusercontent.com/RyanM-Ferreira/komuniui-api/master/README.md",
         previewImage: "",
         gallery: [
-            "",
             "",
         ],
     }

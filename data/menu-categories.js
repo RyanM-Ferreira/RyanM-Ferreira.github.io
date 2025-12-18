@@ -10,6 +10,19 @@ window.category = {
         { name: "About This Portfolio", path: "pages/project-info.html", icon: "assets/icons/gear.png", additional: 'portfolio' },
     ],
     utilities: [
-        { name: "Desktop.ini", path: "index.html", icon: "assets/icons/gear.png" },
+        {
+            name: "System",
+            icon: "assets/icons/arrow.png",
+            children: [
+                { name: "Desktop.ini", path: "index.html", icon: "assets/icons/gear.png" },
+            ]
+        },
+        {
+            name: "Applications",
+            icon: "assets/icons/arrow.png",
+            children: [
+                { name: "Desktop.ini", path: "index.html", icon: "assets/icons/gear.png" },
+            ]
+        }
     ]
 };
