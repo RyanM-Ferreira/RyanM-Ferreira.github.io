@@ -9,7 +9,6 @@
 .desktop-icon {
     width: 70px;
     text-align: center;
-    cursor: url("../assets/click.png"), pointer;
 }
 
 .desktop-icon img {

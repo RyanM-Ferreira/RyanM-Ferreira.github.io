@@ -25,7 +25,6 @@
     border: 2px solid var(--light);
     border-right-color: var(--dark);
     border-bottom-color: var(--dark);
-    cursor: url("../assets/click.png"), pointer;
 }
 
 #clock {

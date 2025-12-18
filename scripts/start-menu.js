@@ -36,8 +36,6 @@ function showCategory(categoryOrChildren, thisElement) {
         itemButton.onclick = () => {
             if (!menuCategory.children) {
                 projectId = (menuCategory.additional !== null) ? menuCategory.additional : null;
-                
-                console.log (menuCategory.additional, "\n", projectId);
                 createWindow(menuCategory.name, menuCategory.path, projectId);
             }
         };

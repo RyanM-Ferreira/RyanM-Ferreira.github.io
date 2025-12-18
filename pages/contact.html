@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="../styles-global.css">
+    <link rel="stylesheet" href="../styles/project-info.css">
+
+    <style>
+        .mail-container {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .mail-icon {
+            width: 25%;
+            margin-bottom: 16px;
+        }
+
+        .mail-address:hover {
+            color: var(--bg-desktop);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project-page">
+        <div class="project-header">
+            <h1 class="project-title">Contact</h1>
+            <div class="project-meta">
+                <span>Get in Touch</span>
+                <span class="status">Available</span>
+            </div>
+        </div>
+
+        <div class="section mail-container">
+            <img src="../assets/icons/mail.png" alt="Email Icon" class="mail-icon">
+            <a id="mail" href="mailto:ryanmatheusferreira@outlook.com.br">
+                <p class="mail-address">ryanmatheusferreira@outlook.com.br</p>
+            </a>
+            <p>Click to send me an email</p>
+        </div>
+
+        <div class="section">
+            <p>I'm always open to chat. Just drop an email!</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            document.getElementById("mail").click();
+        };
+    </script>
+</body>
+
+</html>

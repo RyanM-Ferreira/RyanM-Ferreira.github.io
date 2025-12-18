@@ -8,11 +8,8 @@ function loadContent(data) {
     const github = document.getElementById("project-github");
     github.href = projectData.github;
 
-    document.getElementById("project-description").textContent =
-        projectData.description.trim();
-
-    document.getElementById("project-notes").textContent =
-        projectData.notes.trim();
+    document.getElementById("project-description").textContent = projectData.description;
+    document.getElementById("project-notes").textContent = projectData.notes;
 
     const techList = document.getElementById("tech-list");
 
@@ -37,8 +34,8 @@ function loadContent(data) {
     }
 
     async function loadReadme() {
-        let myObject = await fetch(projectData.readme);
-        let text = await myObject.text();
+        let object = await fetch(projectData.readme);
+        let text = await object.text();
         document.getElementById("readme").textContent = text;
     }
 
@@ -46,10 +43,10 @@ function loadContent(data) {
 }
 
 function loadProject(projectId) {
-    const data = window.portfolioData[projectId];
+    var message = `Project ${projectId} not found...`;
+    const data = window.projectData[projectId];
 
     if (!data) {
-        var message = `Project ${projectId} not found...`;
         console.error(message);
         alert(message);
 

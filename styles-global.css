@@ -1,15 +1,17 @@
 :root {
+    /* Color Pallete */
     --bg-desktop: #b8a7ff;
     --bg-window: #ede5ff;
     --bg-title: #8167f7;
-
     --button: #d9d2ff;
 
     --black: #000;
+
     --light: #ffffff;
     --dark: #3a2f63;
-
     --shadow: #725fbd;
+
+    /* Misc */
     --padding: 8px;
 }
 
@@ -36,15 +38,10 @@ body {
     -webkit-user-select: none;
     user-select: none;
     transition: width 0.25s, height 0.25s, background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-    cursor: url("assets/cursor.png"), auto;
-}
-
-a,
-button {
-    cursor: url("assets/click.png"), pointer;
 }
 
 body {
+    cursor: url("assets/cursor.png"), auto;
     background: url("assets/images/wallpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,4 +85,20 @@ body {
         max-height: none !important;
         overflow: visible !important;
     }
+}
+
+/* Mouse Cursor */
+.desktop-icon,
+.folder,
+.file-item,
+#breadcrumb,
+.taskbar-icon,
+a,
+button,
+.title-bar button {
+    cursor: url("../assets/click.png"), pointer;
+}
+
+.title-bar {
+    cursor: url("../assets/move.png"), grab;
 }

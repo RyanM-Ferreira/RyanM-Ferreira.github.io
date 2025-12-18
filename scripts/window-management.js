@@ -15,12 +15,7 @@ function drag(e, id) {
     const minY = 0;
     const maxY = window.innerHeight - correctPos;
 
-    updateWindowIndex(element);
-
-    console.log("Drag");
-
     function move(e) {
-
         if (element.dataset.maximized === "true") {
             return;
         }
@@ -47,64 +42,33 @@ function drag(e, id) {
     document.addEventListener("pointermove", move);
 }
 
-function updateWindowIndex(element) {
-    var selectedElement = element;
-    selectedElement.style.zIndex = 1;
+function updateWindowID() {
+    const newWindowID = windowCounter++;
+    console.log("New Window ID: ", newWindowID);
 
-    for (let window of openedWindows) {
-        window = document.getElementById(window);
-
-        if (selectedElement != window && window !== null) {
-            window.style.zIndex = 0;
-        }
-    }
-}
-
-function updateOpenedWindows(windowId) {
-    openedWindows.push(windowId);
-}
-
-function checkWindowLimit() {
-    var windowLimit = 50;
-
-    if (openedWindows.length >= windowLimit) {
-        alert("You have reached the maximum number of opened windows. All windows will be closed.");
-
-        for (let window of openedWindows) {
-            closeWindow(openedWindows[window]);
-        }
-
-        openedWindows = [];
-    }
-}
-
-function updateWindowPosition() {
-    windowPosition += windowPositionMultiplier;
-
-    resetPosition = windowCounter % 10 === 0;
-
-    if (resetPosition) {
-        windowPosition = windowPositionMultiplier;
-    }
-
-    return windowPosition;
+    return newWindowID;
 }
 
 function createWindow(windowTitle, windowPath, projectId = null) {
+    const window = document.createElement('div');
+
     updateWindowPosition();
 
-    const windowId = windowCounter++;
+    const windowId = updateWindowID();
 
-    const windowDiv = document.createElement('div');
-    windowDiv.id = windowId;
-    windowDiv.classList.add('window', 'shadow', 'inside');
+    window.id = windowId;
+    window.className = "window shadow inside";
 
-    windowDiv.style.top = windowPosition + 'px';
-    windowDiv.style.left = windowPosition + 'px';
+    window.style.zIndex = 1;
+
+    window.style.top = windowPosition + 'px';
+    window.style.left = windowPosition + 'px';
 
     const titleBar = document.createElement('div');
     titleBar.classList.add('title-bar');
     titleBar.onpointerdown = (e) => {
+        const element = document.getElementById(windowId);
+        updateWindowIndex(element);
         drag(e, windowId);
     }
 
@@ -141,13 +105,14 @@ function createWindow(windowTitle, windowPath, projectId = null) {
 
     viewerDiv.appendChild(iframe);
 
-    windowDiv.appendChild(titleBar);
-    windowDiv.appendChild(viewerDiv);
+    window.appendChild(titleBar);
+    window.appendChild(viewerDiv);
 
     title.textContent = windowTitle;
     iframe.src = windowPath;
 
-    document.body.appendChild(windowDiv);
+    document.body.appendChild(window);
+    updateOpenedWindows(windowId);
 
     iframe.onload = () => {
         if (projectId) {
@@ -156,6 +121,34 @@ function createWindow(windowTitle, windowPath, projectId = null) {
     };
 
     checkWindowLimit();
+}
+
+function updateWindowIndex(element) {
+    for (let windowId of openedWindows) {
+        const window = document.getElementById(windowId);
+
+        if (window && window !== element) {
+            window.style.zIndex = 0;
+        }
+    }
+
+    element.style.zIndex = 1;
+}
+
+function updateOpenedWindows(windowId) {
+    openedWindows.push(windowId);
+}
+
+function updateWindowPosition() {
+    windowPosition += windowPositionMultiplier;
+
+    resetPosition = windowCounter % 10 === 0;
+
+    if (resetPosition) {
+        windowPosition = windowPositionMultiplier;
+    }
+
+    return windowPosition;
 }
 
 function maximizeWindow(id) {
@@ -180,7 +173,24 @@ function closeWindow(id) {
     const windowElement = document.getElementById(id);
     resetWindowPosition(windowElement);
     windowElement.remove();
+
     return;
+}
+
+function checkWindowLimit() {
+    var windowLimit = 50;
+    var message = "You have reached the maximum number of opened windows. All windows will be closed.";
+
+    if (openedWindows.length >= windowLimit) {
+        alert(message);
+        console.log(message);
+
+        for (let window of openedWindows) {
+            closeWindow(openedWindows[window]);
+        }
+
+        openedWindows = [];
+    }
 }
 
 function getWindowPosition(windowElement) {
@@ -188,6 +198,7 @@ function getWindowPosition(windowElement) {
     windowElement.dataset.oldHeight = windowElement.offsetHeight;
     windowElement.dataset.oldLeft = windowElement.offsetLeft;
     windowElement.dataset.oldTop = windowElement.offsetTop;
+
     return;
 }
 

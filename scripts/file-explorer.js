@@ -99,21 +99,26 @@ function updateArchives(windowId, categoryOrChildren, mustReset = false) {
 
 function createExplorer() {
     const explorer = document.createElement("div");
-    const windowId = windowCounter++;
 
     updateWindowPosition();
 
-    explorer.style.top = windowPosition + 'px';
-    explorer.style.left = windowPosition + 'px';
+    const windowId = updateWindowID();
 
     explorer.id = windowId;
     explorer.className = "window shadow inside";
 
+    explorer.style.zIndex = 1;
+
+    explorer.style.top = windowPosition + 'px';
+    explorer.style.left = windowPosition + 'px';
+
     const titleBar = document.createElement("div");
     titleBar.className = "title-bar";
     titleBar.onpointerdown = (e) => {
-        drag(e, windowId)
-    };
+        const element = document.getElementById(windowId);
+        updateWindowIndex(element);
+        drag(e, windowId);
+    }
 
     const span = document.createElement("span");
     span.textContent = `Explorer.exe - My Projects`;
@@ -144,8 +149,8 @@ function createExplorer() {
 
     const categories = [
         { id: "about", label: "About me" },
-        { id: "thesis", label: "My thesis" },
-        { id: "c_scharp", label: "C#" },
+        { id: "featured_project", label: "Featured Project" },
+        { id: "csharp", label: "C#" },
         { id: "cpp", label: "C++" },
         { id: "javascript", label: "JavaScript" },
         { id: "internal", label: "Internal files" }
@@ -190,6 +195,7 @@ function createExplorer() {
     explorer.appendChild(explorerRect);
 
     document.body.appendChild(explorer);
+    updateOpenedWindows(windowId);
 
     checkWindowLimit();
     updateOpenedWindows(windowId);
